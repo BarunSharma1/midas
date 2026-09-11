@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MIDAS Skills | Workforce Solutions, Apprenticeships (NAPS &amp; NATS) &amp; CSR Skilling — Pune</title>
+<meta name="description" content="MIDAS Skills is a Pune-based workforce solutions company — NAPS & NATS apprenticeship facilitation, WILP, contract staffing, corporate upskilling and placement-linked CSR skilling.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'><rect width='40' height='40' rx='9' fill='%230B1B2B'/><path d='M10 28V13l10 9 10-9v15' stroke='%23E8702A' stroke-width='3.2' fill='none' stroke-linecap='round' stroke-linejoin='round'/><circle cx='20' cy='31' r='2' fill='%23F5A623'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ============ 1. DESIGN TOKENS ============ */
+:root{
+  --navy:#0B1B2B;
+  --navy-2:#12283d;
+  --orange:#E8702A;
+  --orange-d:#d05c1c;
+  --gold:#F5A623;
+  --bg:#f8fafc;
+  --card:#ffffff;
+  --border:#e2e8f0;
+  --text:#1e293b;
+  --muted:#64748b;
+  --red:#dc2626;
+  --green:#16a34a;
+  --radius:16px;
+  --shadow-sm:0 1px 2px rgba(11,27,43,.06);
+  --shadow:0 14px 34px -14px rgba(11,27,43,.18);
+  --font-head:'Outfit',sans-serif;
+  --font-body:'Inter',sans-serif;
+}
+
+/* ============ 2. BASE ============ */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
+body{font-family:var(--font-body);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+ul{list-style:none}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+::selection{background:var(--orange);color:#fff}
+::-webkit-scrollbar{width:10px}
+::-webkit-scrollbar-track{background:#eef2f7}
+::-webkit-scrollbar-thumb{background:#c3cedb;border-radius:8px}
+::-webkit-scrollbar-thumb:hover{background:#a8b8ca}
+:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
+
+.skip-link{position:absolute;left:-9999px;top:0;background:var(--navy);color:#fff;padding:10px 18px;z-index:999;border-radius:0 0 10px 0}
+.skip-link:focus{left:0}
+
+.container{width:100%;max-width:1200px;margin-inline:auto;padding-inline:24px}
+section{padding:100px 0}
+.bg-white{background:#fff}
+
+/* Section headers */
+.sec-label{display:inline-flex;align-items:center;gap:10px;font:700 12.5px/1 var(--font-body);letter-spacing:.18em;text-transform:uppercase;color:var(--orange);margin-bottom:16px}
+.sec-label::before{content:"";width:26px;height:2px;background:var(--orange)}
+.sec-label.gold{color:var(--gold)}
+.sec-label.gold::before{background:var(--gold)}
+.sec-title{font:700 clamp(1.9rem,3.4vw,2.7rem)/1.16 var(--font-head);color:var(--navy);letter-spacing:-.02em;max-width:640px}
+.sec-sub{color:var(--muted);font-size:16px;line-height:1.75;max-width:560px;margin-top:14px}
+.split-head{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:end;margin-bottom:54px}
+.sec-head.center{text-align:center}
+.sec-head.center .sec-label::after{content:"";width:26px;height:2px;background:var(--orange)}
+.sec-head.center .sec-label.gold::after{background:var(--gold)}
+.sec-head.center .sec-title{margin-inline:auto}
+.sec-head.center .sec-sub{margin-inline:auto}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 26px;border-radius:11px;font:600 15px/1 var(--font-body);border:1.5px solid transparent;transition:all .25s ease;white-space:nowrap}
+.btn .icon{width:17px;height:17px;transition:transform .25s}
+.btn:hover .icon{transform:translateX(3px)}
+.btn:active{transform:translateY(0) scale(.98)}
+.btn-accent{background:var(--orange);color:#fff;box-shadow:0 8px 20px -8px rgba(232,112,42,.55)}
+.btn-accent:hover{background:var(--orange-d);transform:translateY(-2px)}
+.btn-outline{border-color:#cbd5e1;color:var(--navy);background:transparent}
+.btn-outline:hover{border-color:var(--navy);background:var(--navy);color:#fff;transform:translateY(-2px)}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-navy:hover{background:var(--orange);transform:translateY(-2px)}
+.btn-sm{padding:11px 20px;font-size:13.5px;border-radius:10px}
+.btn-block{width:100%}
+.btn:disabled{opacity:.7;cursor:not-allowed;transform:none}
+.spin{width:16px;height:16px;border:2px solid rgba(255,255,255,.35);border-top-color:#fff;border-radius:50%;display:none;animation:rot .7s linear infinite}
+.btn.loading .spin{display:inline-block}
+.btn.loading > .icon{display:none}
+@keyframes rot{to{transform:rotate(360deg)}}
+
+/* Icons */
+.icon{width:20px;height:20px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.icon-fill{fill:currentColor;stroke:none}
+
+/* Corner accents */
+.corner{--corner:var(--orange);position:relative}
+.corner::before,.corner::after{content:"";position:absolute;width:56px;height:56px;border:3px solid var(--corner);pointer-events:none;z-index:2}
+.corner::before{top:-14px;left:-14px;border-right:none;border-bottom:none;border-radius:10px 0 0 0}
+.corner::after{bottom:-14px;right:-14px;border-left:none;border-top:none;border-radius:0 0 10px 0}
+.corner-gold{--corner:var(--gold)}
+
+/* Reveal on scroll — hidden ONLY when JS adds ".pre",
+   so content is always visible even if JavaScript fails */
+.reveal.pre{opacity:0}
+.reveal.pre.in{opacity:1;animation:fadeUp .65s cubic-bezier(.22,1,.36,1) var(--d,0s) backwards}
+@keyframes fadeUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+
+/* Hero load-in (pure CSS — always runs, JS not required) */
+.ha{opacity:0;animation:fadeUp .8s cubic-bezier(.22,1,.36,1) both;animation-delay:var(--d,0s)}
+
+/* ============ 3. TOPBAR + HEADER ============ */
+.topbar{background:var(--navy);color:#cbd5e1;font-size:13px}
+.topbar-in{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:9px 0}
+.topbar .icon{width:14px;height:14px;color:var(--gold)}
+.tb-left,.tb-right{display:flex;align-items:center;gap:22px}
+.tb-left span,.tb-right a{display:inline-flex;align-items:center;gap:7px}
+.tb-right a{color:#e2e8f0;transition:color .2s}
+.tb-right a:hover{color:var(--gold)}
+
+.site-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:box-shadow .3s,border-color .3s}
+.site-header.scrolled{border-color:var(--border);box-shadow:0 8px 26px -16px rgba(11,27,43,.22)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
+.brand{display:flex;align-items:center;gap:11px}
+.brand svg{width:38px;height:38px}
+.brand-name{display:flex;flex-direction:column;line-height:1}
+.brand-name b{font:800 20px/1 var(--font-head);letter-spacing:.02em;color:var(--navy)}
+.brand-name b em{font-style:normal;color:var(--orange)}
+.brand-name small{font:600 9.5px/1 var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:5px}
+.nav-links{display:flex;gap:32px}
+.nav-link{position:relative;font:500 15px/1 var(--font-body);color:#334155;padding:6px 0;transition:color .2s}
+.nav-link::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:2px;background:var(--orange);transform:scaleX(0);transform-origin:left;transition:transform .28s ease}
+.nav-link:hover,.nav-link.active{color:var(--navy)}
+.nav-link:hover::after,.nav-link.active::after{transform:scaleX(1)}
+.burger{width:44px;height:44px;border:1px solid var(--border);border-radius:10px;background:#fff;display:none;place-items:center}
+.burger span{display:block;width:20px;height:2px;background:var(--navy);margin:2.5px auto;border-radius:2px;transition:.3s}
+.burger.active span:nth-child(1){transform:translateY(4.5px) rotate(45deg)}
+.burger.active span:nth-child(2){opacity:0}
+.burger.active span:nth-child(3){transform:translateY(-4.5px) rotate(-45deg)}
+.m-panel{position:absolute;top:100%;left:0;right:0;background:#fff;border-bottom:1px solid var(--border);box-shadow:0 26px 40px -22px rgba(11,27,43,.25);max-height:0;overflow:hidden;transition:max-height .4s ease;display:none}
+.m-panel.open{max-height:540px}
+.m-panel ul{padding:8px 24px 24px;display:flex;flex-direction:column}
+.m-panel a{padding:14px 4px;border-bottom:1px solid #f1f5f9;font:500 15.5px var(--font-body);color:var(--text)}
+.m-panel .btn{margin-top:18px}
+
+/* Scroll progress */
+#progress{position:fixed;top:0;left:0;right:0;height:3px;background:var(--orange);transform-origin:left;transform:scaleX(0);z-index:120}
+
+/* ============ 4. HERO ============ */
+.hero{position:relative;padding:0;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(11,27,43,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(11,27,43,.05) 1px,transparent 1px);background-size:44px 44px;-webkit-mask-image:linear-gradient(to bottom,rgba(0,0,0,.8),transparent 88%);mask-image:linear-gradient(to bottom,rgba(0,0,0,.8),transparent 88%)}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.05fr .92fr;gap:64px;align-items:center;padding-top:72px;padding-bottom:96px}
+.hero-badge{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--border);border-radius:999px;padding:9px 18px;font:600 13px/1 var(--font-body);color:var(--navy);box-shadow:var(--shadow-sm);margin-bottom:28px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--gold);position:relative;flex:none}
+.dot::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:2px solid var(--gold);animation:ping 1.8s ease-out infinite}
+@keyframes ping{from{transform:scale(.5);opacity:.8}to{transform:scale(1.5);opacity:0}}
+.hero h1{font:800 clamp(2.6rem,5.4vw,4.1rem)/1.08 var(--font-head);color:var(--navy);letter-spacing:-.025em;margin-bottom:24px}
+.hl{color:var(--orange);position:relative;display:inline-block}
+.scribble{position:absolute;left:0;bottom:-10px;width:100%;height:12px;overflow:visible}
+.scribble path{fill:none;stroke:var(--gold);stroke-width:5;stroke-linecap:round;stroke-dasharray:230;stroke-dashoffset:230;animation:draw .9s ease .95s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.hero-sub{font-size:17px;line-height:1.75;color:#475569;max-width:560px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+.hero-trust{display:flex;flex-wrap:wrap;gap:12px 24px;margin-top:36px}
+.hero-trust li{display:inline-flex;align-items:center;gap:8px;font:500 13.5px/1.4 var(--font-body);color:#475569}
+.hero-trust .icon{width:16px;height:16px;color:var(--orange)}
+.hero-visual{position:relative}
+.hero-img img{width:100%;aspect-ratio:5/6;object-fit:cover;border-radius:22px;border:1px solid var(--border);box-shadow:var(--shadow)}
+.float-card{position:absolute;left:-30px;bottom:38px;display:flex;align-items:center;gap:13px;background:#fff;border:1px solid var(--border);border-radius:15px;padding:14px 19px;box-shadow:var(--shadow);animation:floaty 5s ease-in-out infinite;z-index:3}
+.fc-ic{width:42px;height:42px;border-radius:11px;background:var(--navy);color:#fff;display:grid;place-items:center;flex:none}
+.float-card strong{display:block;font:700 16.5px/1.2 var(--font-head);color:var(--navy)}
+.float-card small{font-size:12.5px;color:var(--muted)}
+.float-chip{position:absolute;top:24px;right:-16px;display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--border);border-radius:999px;padding:10px 17px;font:600 13px/1 var(--font-body);color:var(--navy);box-shadow:var(--shadow);animation:floaty 6s ease-in-out 1s infinite;z-index:3}
+.float-chip .icon{width:16px;height:16px;color:var(--gold)}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+
+/* ============ 5. TICKER ============ */
+.ticker{overflow:hidden;background:#fff;border-block:1px solid var(--border);padding:15px 0}
+.ticker-track{display:flex;width:max-content;animation:tick 34s linear infinite}
+.ticker:hover .ticker-track{animation-play-state:paused}
+@keyframes tick{to{transform:translateX(-50%)}}
+.ticker-group{display:flex;align-items:center;gap:44px;padding-right:44px}
+.ticker-group span{font:600 12.5px/1 var(--font-body);letter-spacing:.16em;text-transform:uppercase;color:#475569;white-space:nowrap}
+.ticker-group i{width:6px;height:6px;background:var(--orange);transform:rotate(45deg);flex:none}
+
+/* ============ 6. STATS ============ */
+.stats{background:var(--navy);position:relative;overflow:hidden;padding:88px 0}
+.stats::before{content:"";position:absolute;right:-130px;top:-130px;width:360px;height:360px;border:2px solid rgba(232,112,42,.16);border-radius:50%}
+.stats::after{content:"";position:absolute;left:-90px;bottom:-140px;width:280px;height:280px;border:2px solid rgba(245,166,35,.14);border-radius:50%}
+.stats-head{text-align:center;margin-bottom:60px;position:relative;z-index:1}
+.stats-head .sec-title{color:#fff}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;position:relative;z-index:1}
+.stat{border-left:1px solid rgba(255,255,255,.15);padding-left:30px}
+.stat:first-child{border-left:none;padding-left:0}
+.stat-nw{display:flex;align-items:baseline;gap:3px}
+.stat-num{font:800 clamp(2.7rem,4.6vw,3.7rem)/1 var(--font-head);color:#fff;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.stat-plus{font:800 clamp(1.8rem,3vw,2.4rem)/1 var(--font-head);color:var(--orange)}
+.stat-label{display:block;margin-top:12px;font:700 13px/1 var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:#cbd5e1}
+.stat p{margin-top:9px;font-size:13.5px;color:#7e8ea3;line-height:1.6}
+
+/* ============ 7. SERVICES ============ */
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.svc-card{position:relative;background:#fff;border:1px solid var(--border);border-radius:16px;padding:36px 34px 32px;overflow:hidden;transition:transform .3s,box-shadow .3s,border-color .3s}
+.svc-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--orange);transform:scaleX(0);transform-origin:left;transition:transform .35s ease}
+.svc-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:#cfd9e4}
+.svc-card:hover::before{transform:scaleX(1)}
+.svc-num{position:absolute;top:14px;right:24px;font:800 3.6rem/1 var(--font-head);color:rgba(11,27,43,.05);pointer-events:none}
+.svc-icon{width:54px;height:54px;border-radius:13px;background:rgba(232,112,42,.09);border:1px solid rgba(232,112,42,.2);color:var(--orange);display:grid;place-items:center;margin-bottom:22px;transition:.3s}
+.svc-icon .icon{width:25px;height:25px}
+.svc-card:hover .svc-icon{background:var(--navy);border-color:var(--navy);color:#fff;transform:rotate(-5deg)}
+.svc-card h3{font:700 21px/1.3 var(--font-head);color:var(--navy);margin-bottom:11px;max-width:340px}
+.svc-card p{font-size:15px;color:var(--muted);line-height:1.7}
+.svc-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.svc-tags li{font:600 12.5px/1 var(--font-body);color:#475569;background:#f1f5f9;border:1px solid var(--border);border-radius:999px;padding:6px 13px}
+.svc-link{display:inline-flex;align-items:center;gap:8px;margin-top:24px;font:600 14.5px/1 var(--font-body);color:var(--orange)}
+.svc-link .icon{width:16px;height:16px;transition:transform .25s}
+.svc-link:hover .icon{transform:translateX(4px)}
+
+/* ============ 8. ABOUT ============ */
+.about-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:72px;align-items:center}
+.about-img img{width:100%;aspect-ratio:14/15;object-fit:cover;border-radius:20px;border:1px solid var(--border);box-shadow:var(--shadow)}
+.exp-badge{position:absolute;left:-24px;bottom:30px;display:flex;align-items:center;gap:13px;background:var(--navy);color:#fff;padding:18px 22px;border-radius:16px;box-shadow:var(--shadow);z-index:3}
+.exp-badge strong{font:800 30px/1 var(--font-head);color:#fff}
+.exp-badge strong span{color:var(--orange)}
+.exp-badge span{font:500 12.5px/1.45 var(--font-body);color:#cbd5e1;max-width:96px}
+.about-copy p{color:var(--muted);font-size:15.5px;line-height:1.8;margin-top:18px}
+.values{display:grid;grid-template-columns:1fr 1fr;gap:14px 18px;margin-top:32px}
+.value{display:flex;gap:13px;align-items:flex-start;padding:17px;border:1px solid var(--border);border-radius:13px;background:#fff;transition:.25s}
+.value:hover{border-color:rgba(232,112,42,.5);transform:translateY(-3px);box-shadow:var(--shadow-sm)}
+.v-ic{width:38px;height:38px;flex:none;border-radius:10px;background:rgba(245,166,35,.14);color:#d98c0d;display:grid;place-items:center}
+.v-ic .icon{width:18px;height:18px}
+.value strong{display:block;font:600 15.5px/1.3 var(--font-head);color:var(--navy)}
+.value small{display:block;font-size:12.8px;color:var(--muted);line-height:1.55;margin-top:4px}
+.founder{margin-top:64px;display:grid;grid-template-columns:150px 1fr;gap:36px;align-items:center;background:#fff;border:1px solid var(--border);border-radius:18px;padding:34px 38px;box-shadow:var(--shadow-sm)}
+.founder-photo img{width:150px;height:168px;object-fit:cover;border-radius:15px;border:1px solid var(--border)}
+.founder-body{position:relative}
+.quote-mark{display:block;font:800 84px/0.6 var(--font-head);color:rgba(232,112,42,.18)}
+.founder blockquote{font-size:17.5px;line-height:1.75;color:var(--text);max-width:720px;margin-top:6px}
+.founder-meta{margin-top:20px;padding-top:18px;border-top:1px solid var(--border)}
+.founder-meta::before{content:"";display:block;width:30px;height:3px;background:var(--orange);margin-bottom:12px}
+.founder-meta strong{font:700 18px/1.2 var(--font-head);color:var(--navy);display:block}
+.founder-meta span{font-size:14px;color:var(--muted)}
+
+/* ============ 9. CSR ============ */
+.csr-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:start}
+.csr-copy > p{color:var(--muted);font-size:15.5px;line-height:1.8;margin-top:16px}
+.init{display:flex;gap:17px;padding:20px 0;border-bottom:1px solid var(--border)}
+.init-ic{width:46px;height:46px;flex:none;border-radius:12px;background:#fff;border:1px solid var(--border);color:var(--orange);display:grid;place-items:center;box-shadow:var(--shadow-sm)}
+.init h4{font:600 16.5px/1.3 var(--font-head);color:var(--navy);margin-bottom:5px}
+.init p{font-size:14.5px;color:var(--muted);line-height:1.65}
+.csr-copy .btn{margin-top:30px}
+.cred-panel{background:var(--navy);border-radius:20px;padding:38px 36px;border-top:4px solid var(--gold);box-shadow:var(--shadow)}
+.cred-panel h3{font:700 22px/1.3 var(--font-head);color:#fff}
+.cred-panel > p{color:#94a3b8;font-size:14.5px;line-height:1.65;margin:10px 0 10px}
+.cred{display:flex;align-items:center;gap:15px;padding:17px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+.cred:last-of-type{border-bottom:none}
+.cred-ic{width:42px;height:42px;flex:none;border-radius:11px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:var(--gold);display:grid;place-items:center}
+.cred-ic .icon{width:19px;height:19px}
+.cred strong{display:block;font:600 15px/1.35 var(--font-body);color:#fff}
+.cred small{color:#8496ab;font-size:13px}
+.cred .cred-check{margin-left:auto;color:var(--gold);width:17px;height:17px;flex:none}
+.cred-foot{margin-top:18px;padding-top:18px;border-top:1px solid rgba(255,255,255,.1);font-size:12.5px;line-height:1.6;color:#8496ab}
+
+/* ============ 10. CAREERS ============ */
+.jobs{background:#fff;border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:var(--shadow-sm)}
+.job{display:grid;grid-template-columns:1fr auto;gap:8px 28px;align-items:center;padding:28px 32px;position:relative;transition:background .25s}
+.job + .job{border-top:1px solid var(--border)}
+.job::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--orange);transform:scaleY(0);transition:transform .3s}
+.job:hover{background:#f8fafc}
+.job:hover::before{transform:scaleY(1)}
+.job h3{font:600 19px/1.3 var(--font-head);color:var(--navy)}
+.job-desc{color:var(--muted);font-size:14.5px;line-height:1.65;margin-top:6px;max-width:660px}
+.job-meta{display:flex;flex-wrap:wrap;gap:9px;margin-top:15px}
+.chip{display:inline-flex;align-items:center;gap:6px;font:500 12.5px/1 var(--font-body);color:#475569;background:#f1f5f9;border:1px solid var(--border);border-radius:999px;padding:6px 12px}
+.chip .icon{width:13px;height:13px;color:var(--orange)}
+.job .btn{align-self:center}
+.jobs-note{text-align:center;margin-top:28px;font-size:14.5px;color:var(--muted)}
+.jobs-note a{color:var(--orange);font-weight:600;border-bottom:1.5px solid rgba(232,112,42,.35);transition:border-color .2s}
+.jobs-note a:hover{border-color:var(--orange)}
+
+/* ============ 11. GALLERY ============ */
+.filters{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:44px}
+.filter-btn{padding:11px 24px;border-radius:999px;border:1.5px solid var(--border);background:#fff;color:var(--muted);font:600 14px/1 var(--font-body);transition:.25s}
+.filter-btn:hover{border-color:var(--navy);color:var(--navy)}
+.filter-btn.active{background:var(--navy);border-color:var(--navy);color:#fff}
+.g-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.g-item{position:relative;border-radius:15px;overflow:hidden;border:1px solid var(--border);cursor:pointer;background:#fff;transition:opacity .28s,transform .28s,border-color .3s}
+.g-item:hover{border-color:rgba(232,112,42,.55)}
+.g-item.gone{opacity:0;transform:scale(.94)}
+.g-item img{width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .6s cubic-bezier(.22,1,.36,1)}
+.g-item:hover img{transform:scale(1.07)}
+.g-cap{position:absolute;inset:auto 0 0 0;padding:48px 18px 16px;background:linear-gradient(transparent,rgba(11,27,43,.88));opacity:0;transform:translateY(10px);transition:.35s}
+.g-item:hover .g-cap{opacity:1;transform:none}
+.g-cat{font:700 10.5px/1 var(--font-body);letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.g-cap h4{font:600 15.5px/1.35 var(--font-head);color:#fff;margin-top:6px}
+
+/* ============ 12. CONTACT ============ */
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:start}
+.c-list{margin-top:36px;display:flex;flex-direction:column;gap:26px}
+.c-item{display:flex;gap:16px}
+.c-ic{width:46px;height:46px;flex:none;border-radius:12px;background:rgba(232,112,42,.09);border:1px solid rgba(232,112,42,.22);color:var(--orange);display:grid;place-items:center}
+.c-item strong{display:block;font:600 15px/1.4 var(--font-body);color:var(--navy);margin-bottom:4px}
+.c-item p,.c-item a{color:var(--muted);font-size:14.5px;line-height:1.65}
+.c-item a:hover{color:var(--orange)}
+.map-card{margin-top:34px;border-radius:16px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow-sm)}
+.map-card iframe{display:block;width:100%;height:240px;border:0}
+.form-card{position:relative;background:#fff;border:1px solid var(--border);border-radius:18px;padding:38px;box-shadow:var(--shadow);overflow:hidden}
+.form-card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--orange)}
+.form-head h3{font:700 24px/1.2 var(--font-head);color:var(--navy)}
+.form-head p{color:var(--muted);font-size:14.5px;margin:8px 0 26px;line-height:1.6}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}
+.field{display:flex;flex-direction:column;gap:7px;margin-bottom:18px}
+.field label{font:600 13.5px/1 var(--font-body);color:var(--navy)}
+.field input,.field select,.field textarea{width:100%;padding:13px 15px;border:1.5px solid var(--border);border-radius:10px;font:400 15px/1.5 var(--font-body);color:var(--text);background:#fff;transition:border-color .2s,box-shadow .2s;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--orange);box-shadow:0 0 0 3px rgba(232,112,42,.14);outline:none}
+.field input::placeholder,.field textarea::placeholder{color:#9aa8ba}
+.field.invalid input,.field.invalid select,.field.invalid textarea{border-color:var(--red)}
+.field.invalid input:focus,.field.invalid textarea:focus{box-shadow:0 0 0 3px rgba(220,38,38,.12)}
+.err{display:none;font-size:12.5px;color:var(--red)}
+.field.invalid .err{display:block}
+.sel-wrap{position:relative}
+.sel-wrap select{appearance:none;-webkit-appearance:none;padding-right:42px;cursor:pointer}
+.sel-ic{position:absolute;right:14px;top:50%;transform:translateY(-50%);width:17px;height:17px;color:var(--muted);pointer-events:none}
+.form-note{font-size:12.5px;color:var(--muted);text-align:center;margin-top:14px}
+.form-success{display:none;text-align:center;padding:36px 8px 20px;flex-direction:column;align-items:center;gap:8px}
+.form-card.sent form{display:none}
+.form-card.sent .form-success{display:flex}
+.fs-ic{width:66px;height:66px;border-radius:50%;background:#e7f6ec;color:var(--green);display:grid;place-items:center;margin-bottom:8px}
+.fs-ic .icon{width:30px;height:30px}
+.form-success h3{font:700 23px/1.2 var(--font-head);color:var(--navy)}
+.form-success p{color:var(--muted);font-size:15px;max-width:380px}
+.form-success .btn{margin-top:16px}
+
+/* ============ 13. FOOTER ============ */
+.footer{background:var(--navy);color:#94a3b8;padding:76px 0 0}
+.f-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.3fr;gap:44px;padding-bottom:58px}
+.f-brand p{font-size:14.5px;line-height:1.75;margin:18px 0 22px;max-width:320px}
+.f-brand .brand-name b{color:#fff}
+.f-brand .brand-name b em{color:var(--gold)}
+.f-brand .brand-name small{color:#8496ab}
+.footer h4{font:700 14px/1 var(--font-head);color:#fff;letter-spacing:.12em;text-transform:uppercase;margin-bottom:22px}
+.f-links li{margin-bottom:13px}
+.f-links a{display:inline-flex;align-items:center;gap:0;font-size:14.5px;color:#94a3b8;transition:color .2s}
+.f-links a::before{content:"";width:0;height:1.5px;background:var(--gold);transition:width .25s,margin-right .25s}
+.f-links a:hover{color:var(--gold)}
+.f-links a:hover::before{width:14px;margin-right:9px}
+.f-social{display:flex;gap:10px}
+.social-btn{width:38px;height:38px;border-radius:10px;border:1px solid rgba(255,255,255,.16);background:transparent;color:#cbd5e1;display:grid;place-items:center;transition:.25s}
+.social-btn:hover{background:var(--orange);border-color:var(--orange);color:#fff;transform:translateY(-3px)}
+.social-btn .icon{width:16px;height:16px}
+.f-contact li{display:flex;gap:11px;margin-bottom:15px;font-size:14px;line-height:1.6}
+.f-contact .icon{width:16px;height:16px;color:var(--gold);margin-top:3px}
+.f-contact a:hover{color:var(--gold)}
+.f-bottom{border-top:1px solid rgba(255,255,255,.1);padding:22px 0;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;font-size:13.5px}
+.f-legal{display:flex;align-items:center;gap:12px}
+.f-legal a{color:#94a3b8;transition:color .2s}
+.f-legal a:hover{color:var(--gold)}
+
+/* ============ 14. TOAST / MODAL / TO-TOP ============ */
+.toast{position:fixed;left:50%;bottom:30px;transform:translate(-50%,150%);display:flex;align-items:center;gap:11px;background:var(--navy);color:#fff;padding:14px 22px;border-radius:12px;box-shadow:var(--shadow);z-index:300;max-width:min(92vw,480px);font-size:14.5px;opacity:0;transition:transform .35s cubic-bezier(.22,1,.36,1),opacity .35s}
+.toast.show{transform:translate(-50%,0);opacity:1}
+.t-ic{color:var(--gold);display:grid;place-items:center}
+.t-ic .icon{width:18px;height:18px}
+
+.modal{position:fixed;inset:0;z-index:200;display:grid;place-items:center;padding:20px;visibility:hidden;opacity:0;transition:.25s}
+.modal.open{visibility:visible;opacity:1}
+.modal-overlay{position:absolute;inset:0;background:rgba(11,27,43,.62)}
+.modal-card{position:relative;background:#fff;border-radius:16px;max-width:580px;width:100%;max-height:80vh;overflow:auto;padding:36px;transform:translateY(16px) scale(.98);transition:.3s}
+.modal.open .modal-card{transform:none}
+.modal-card h3{font:700 22px/1.2 var(--font-head);color:var(--navy);margin-bottom:16px}
+.modal-card p{font-size:14.5px;color:var(--muted);line-height:1.75;margin-bottom:12px}
+.modal-x{position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:9px;border:1px solid var(--border);background:#fff;color:var(--navy);display:grid;place-items:center;transition:.2s}
+.modal-x:hover{background:var(--navy);color:#fff}
+.modal-x .icon{width:16px;height:16px}
+
+.to-top{position:fixed;right:26px;bottom:26px;width:46px;height:46px;border-radius:12px;background:var(--navy);color:#fff;border:none;display:grid;place-items:center;z-index:150;box-shadow:var(--shadow);opacity:0;visibility:hidden;transform:translateY(12px);transition:.3s}
+.to-top.show{opacity:1;visibility:visible;transform:none}
+.to-top:hover{background:var(--orange)}
+.to-top .icon{width:18px;height:18px}
+
+/* ============ 15. RESPONSIVE ============ */
+@media (max-width:1020px){
+  .hero-grid{grid-template-columns:1fr;gap:60px;padding-top:56px;padding-bottom:72px}
+  .hero-visual{max-width:540px;width:100%;margin:0 auto}
+  .about-grid,.csr-grid,.contact-grid{grid-template-columns:1fr;gap:56px}
+  .about-visual{max-width:520px}
+}
+@media (max-width:992px){
+  .nav-links,.nav-cta{display:none}
+  .burger{display:inline-grid}
+  .m-panel{display:block}
+}
+@media (max-width:940px){
+  .g-grid{grid-template-columns:1fr 1fr}
+  .f-grid{grid-template-columns:1fr 1fr;gap:40px}
+}
+@media (max-width:900px){
+  .stats-grid{grid-template-columns:1fr 1fr;row-gap:44px}
+  .stat:nth-child(odd){border-left:none;padding-left:0}
+}
+@media (max-width:860px){
+  .founder{grid-template-columns:1fr;padding:28px}
+  .founder-photo img{width:130px;height:146px}
+}
+@media (max-width:820px){
+  .svc-grid{grid-template-columns:1fr}
+  .split-head{grid-template-columns:1fr;gap:16px;align-items:start}
+  section{padding:76px 0}
+}
+@media (max-width:680px){
+  .job{grid-template-columns:1fr}
+  .job .btn{justify-self:start}
+}
+@media (max-width:640px){
+  .tb-mail{display:none}
+  .f-row{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  .g-grid{grid-template-columns:1fr}
+  .f-grid{grid-template-columns:1fr}
+  .float-card{left:12px;bottom:16px;padding:11px 15px}
+  .float-chip{right:10px;top:12px}
+  .corner::before,.corner::after{width:38px;height:38px}
+  .corner::before{top:-9px;left:-9px}
+  .corner::after{bottom:-9px;right:-9px}
+  .exp-badge{left:12px;bottom:12px;padding:13px 16px}
+  .stats-grid{gap:24px}
+  .form-card{padding:28px 22px}
+  .f-bottom{justify-content:center;text-align:center}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important}
+  html{scroll-behavior:auto}
+  .reveal.pre{opacity:1}
+}
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#home">Skip to content</a>
+
+<!-- ============ SVG SPRITE ============ -->
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></symbol>
+  <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></symbol>
+  <symbol id="i-check-c" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m8.5 12 2.5 2.5 5-5"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+  <symbol id="i-arrd" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.58 2.81.7A2 2 0 0 1 22 16.92Z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-cap" viewBox="0 0 24 24"><path d="m2 9.5 10-5 10 5-10 5-10-5Z"/><path d="M6 11.8V17c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.2"/><path d="M22 9.5V15"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2 10 5-10 5L2 7l10-5Z"/><path d="m2 12 10 5 10-5"/><path d="m2 17 10 5 10-5"/></symbol>
+  <symbol id="i-brief" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></symbol>
+  <symbol id="i-trend" viewBox="0 0 24 24"><path d="m22 7-8.5 8.5-5-5L2 17"/><path d="M16 7h6v6"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 11.5 2 2 4.5-4.5"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2Z"/></symbol>
+  <symbol id="i-anchor" viewBox="0 0 24 24"><circle cx="12" cy="5" r="3"/><path d="M12 22V8"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.5 13.2 17 22l-5-3-5 3 1.5-8.8"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M16 13H8m8 4H8"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10Z"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></symbol>
+  <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V9h4v1.6A6 6 0 0 1 16 8Z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18.9 2.1h3.4l-7.4 8.5 8.7 11.5h-6.8l-5.3-7-6.1 7H1.9l7.9-9L1.5 2.1h7l4.8 6.3 5.6-6.3Zm-1.2 18h1.9L7.5 4H5.5l12.2 16.1Z"/></symbol>
+  <symbol id="i-fb" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3V2Z"/></symbol>
+  <symbol id="i-insta" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></symbol>
+</svg>
+
+<div id="progress" aria-hidden="true"></div>
+
+<!-- ============ TOPBAR + HEADER ============ -->
+<div class="topbar">
+  <div class="container topbar-in">
+    <div class="tb-left">
+      <span class="tb-loc"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg> Jai Ganesh Vision Mall, Akurdi, Pune</span>
+    </div>
+    <div class="tb-right">
+      <a href="tel:+919223005179"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg> +91 9223 00 5179</a>
+      <a class="tb-mail" href="mailto:info@midasskills.org"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg> info@midasskills.org</a>
+    </div>
+  </div>
+</div>
+
+<header class="site-header" id="site-header">
+  <div class="container nav">
+    <a class="brand" href="#home" aria-label="MIDAS Skills — Home">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="9" fill="#0B1B2B"/><path d="M10 28V13l10 9 10-9v15" stroke="#E8702A" stroke-width="3.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="20" cy="31" r="2" fill="#F5A623"/></svg>
+      <span class="brand-name"><b>MIDAS <em>SKILLS</em></b><small>Workforce &amp; Apprenticeship Solutions</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a class="nav-link" href="#home">Home</a>
+      <a class="nav-link" href="#about">About Us</a>
+      <a class="nav-link" href="#services">Services</a>
+      <a class="nav-link" href="#csr">CSR</a>
+      <a class="nav-link" href="#careers">Careers</a>
+      <a class="nav-link" href="#gallery">Gallery</a>
+      <a class="nav-link" href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-navy btn-sm nav-cta" href="#contact">Get in Touch</a>
+    <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="m-panel">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="m-panel" id="m-panel">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#csr">CSR</a></li>
+      <li><a href="#careers">Careers</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a class="btn btn-accent btn-block" href="#contact">Get in Touch</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <span class="hero-badge ha" style="--d:.05s"><span class="dot"></span> India's Leading Workforce Solutions Partner</span>
+      <h1 class="ha" style="--d:.15s">Shaping Success,<br>Fueling <span class="hl">Growth<svg class="scribble" viewBox="0 0 210 14" preserveAspectRatio="none" aria-hidden="true"><path d="M4 10 C 55 3, 155 3, 206 9"/></svg></span></h1>
+      <p class="hero-sub ha" style="--d:.25s">MIDAS Skills partners with India's leading employers to train, place and empower young talent — through NAPS &amp; NATS apprenticeships, work-integrated learning and dependable workforce solutions.</p>
+      <div class="hero-cta ha" style="--d:.35s">
+        <a href="#services" class="btn btn-accent">Explore Services <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a href="#contact" class="btn btn-outline">Contact Us</a>
+      </div>
+      <ul class="hero-trust ha" style="--d:.45s">
+        <li><svg class="icon" aria-hidden="true"><use href="#i-check-c"/></svg> NAPS &amp; NATS Registered Facilitator</li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-check-c"/></svg> ISO 9001 &amp; 27001 Certified</li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-check-c"/></svg> 80G &amp; CSR-1 Compliant</li>
+      </ul>
+    </div>
+    <div class="hero-visual ha" style="--d:.3s">
+      <div class="hero-img corner">
+        <img src="https://picsum.photos/seed/midas-hero/860/1020.jpg" alt="A MIDAS Skills training session in progress" width="860" height="1020">
+        <div class="float-card">
+          <span class="fc-ic"><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg></span>
+          <div><strong>2,000+ Youth Trained</strong><small>Skilled, certified &amp; placed</small></div>
+        </div>
+        <div class="float-chip"><svg class="icon" aria-hidden="true"><use href="#i-award"/></svg> ISO 9001 Certified</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INDUSTRY TICKER ============ -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <div class="ticker-group">
+      <span>Automotive</span><i></i><span>Manufacturing</span><i></i><span>IT &amp; ITeS</span><i></i><span>BFSI</span><i></i><span>Healthcare &amp; Pharma</span><i></i><span>Retail &amp; FMCG</span><i></i><span>Logistics</span><i></i><span>Telecom</span><i></i><span>Construction</span><i></i><span>Energy</span><i></i><span>Hospitality</span><i></i><span>Textiles</span><i></i>
+    </div>
+    <div class="ticker-group">
+      <span>Automotive</span><i></i><span>Manufacturing</span><i></i><span>IT &amp; ITeS</span><i></i><span>BFSI</span><i></i><span>Healthcare &amp; Pharma</span><i></i><span>Retail &amp; FMCG</span><i></i><span>Logistics</span><i></i><span>Telecom</span><i></i><span>Construction</span><i></i><span>Energy</span><i></i><span>Hospitality</span><i></i><span>Textiles</span><i></i>
+    </div>
+  </div>
+</div>
+
+<!-- ============ IMPACT STATS ============ -->
+<section class="stats" id="impact">
+  <div class="container">
+    <div class="stats-head reveal">
+      <span class="sec-label gold">Our Impact</span>
+      <h2 class="sec-title">A track record you can measure</h2>
+    </div>
+    <div class="stats-grid" data-stagger>
+      <div class="stat reveal">
+        <div class="stat-nw"><span class="stat-num" data-count="50">50</span><span class="stat-plus">+</span></div>
+        <span class="stat-label">Happy Clients</span>
+        <p>Trusted by leading employers across India</p>
+      </div>
+      <div class="stat reveal">
+        <div class="stat-nw"><span class="stat-num" data-count="5">5</span><span class="stat-plus">+</span></div>
+        <span class="stat-label">Years Experience</span>
+        <p>Consistent delivery since day one</p>
+      </div>
+      <div class="stat reveal">
+        <div class="stat-nw"><span class="stat-num" data-count="2000">2,000</span><span class="stat-plus">+</span></div>
+        <span class="stat-label">Youth Trained</span>
+        <p>Skilled, certified and placed in real jobs</p>
+      </div>
+      <div class="stat reveal">
+        <div class="stat-nw"><span class="stat-num" data-count="25">25</span><span class="stat-plus">+</span></div>
+        <span class="stat-label">Industries Served</span>
+        <p>From manufacturing floors to IT parks</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="bg-white" id="services">
+  <div class="container">
+    <div class="split-head">
+      <div class="reveal">
+        <span class="sec-label">What We Do</span>
+        <h2 class="sec-title">End-to-end workforce solutions, delivered with precision</h2>
+      </div>
+      <p class="sec-sub reveal" style="--d:.1s">From first-mile skilling to final-mile placement, we run the complete talent lifecycle — so your teams stay productive and your compliance stays clean.</p>
+    </div>
+    <div class="svc-grid" data-stagger>
+      <article class="svc-card reveal">
+        <span class="svc-num">01</span>
+        <span class="svc-icon"><svg class="icon" aria-hidden="true"><use href="#i-cap"/></svg></span>
+        <h3>Apprenticeship Advisory &amp; Services</h3>
+        <p>End-to-end NAPS &amp; NATS facilitation — from candidate sourcing and documentation to contract management, stipend administration and statutory compliance, so apprenticeships stay effortless for your HR team.</p>
+        <ul class="svc-tags"><li>NAPS</li><li>NATS</li><li>Compliance</li><li>Stipend Management</li></ul>
+        <a href="#contact" class="svc-link" data-enquire="Apprenticeship (NAPS/NATS)">Enquire now <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </article>
+      <article class="svc-card reveal">
+        <span class="svc-num">02</span>
+        <span class="svc-icon"><svg class="icon" aria-hidden="true"><use href="#i-layers"/></svg></span>
+        <h3>Work Integrated Learning Programs (WILP)</h3>
+        <p>Blend classroom rigour with on-the-job industry exposure through structured earn-while-you-learn programs that build loyal, job-ready talent pipelines tuned to your shop floor and workflows.</p>
+        <ul class="svc-tags"><li>Earn &amp; Learn</li><li>Industry Curriculum</li><li>Skill Mapping</li></ul>
+        <a href="#contact" class="svc-link" data-enquire="WILP">Enquire now <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </article>
+      <article class="svc-card reveal">
+        <span class="svc-num">03</span>
+        <span class="svc-icon"><svg class="icon" aria-hidden="true"><use href="#i-brief"/></svg></span>
+        <h3>Workforce Services &amp; Contract Staffing</h3>
+        <p>Reliable, fully compliant contract staffing and payroll management that scales with demand across 25+ industries — backed by meticulous statutory diligence and transparent reporting.</p>
+        <ul class="svc-tags"><li>Contract Staffing</li><li>Payroll</li><li>Statutory Compliance</li></ul>
+        <a href="#contact" class="svc-link" data-enquire="Workforce & Contract Staffing">Enquire now <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </article>
+      <article class="svc-card reveal">
+        <span class="svc-num">04</span>
+        <span class="svc-icon"><svg class="icon" aria-hidden="true"><use href="#i-trend"/></svg></span>
+        <h3>Corporate Upskilling</h3>
+        <p>Custom-designed training interventions across technical and behavioural domains that sharpen existing teams, close skill gaps and raise productivity exactly where it matters most.</p>
+        <ul class="svc-tags"><li>Technical</li><li>Behavioural</li><li>Leadership</li></ul>
+        <a href="#contact" class="svc-link" data-enquire="Corporate Upskilling">Enquire now <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual reveal">
+        <div class="about-img corner corner-gold">
+          <img src="https://picsum.photos/seed/midas-about/760/820.jpg" alt="The MIDAS Skills team at the Akurdi office, Pune" width="760" height="820">
+        </div>
+        <div class="exp-badge">
+          <strong>5<span>+</span></strong>
+          <span>Years of workforce impact</span>
+        </div>
+      </div>
+      <div class="about-copy">
+        <span class="sec-label reveal">About Us</span>
+        <h2 class="sec-title reveal" style="--d:.08s">The bridge between raw talent and real industry demand</h2>
+        <p class="reveal" style="--d:.16s">MIDAS Skills is a Pune-based workforce solutions company committed to one mission — making every young Indian employable. We combine government-backed apprenticeship frameworks with industry-designed curricula to create talent pipelines that are skilled, certified and productive from day one.</p>
+        <p class="reveal" style="--d:.22s">As a registered NAPS &amp; NATS facilitator, we manage the entire apprenticeship lifecycle for our clients — sourcing, documentation, compliance, stipends and mentoring — while our staffing and upskilling verticals keep workforces agile as markets change.</p>
+        <div class="values" data-stagger>
+          <div class="value reveal">
+            <span class="v-ic"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg></span>
+            <div><strong>Integrity</strong><small>We do the right thing — especially when no one is watching.</small></div>
+          </div>
+          <div class="value reveal">
+            <span class="v-ic"><svg class="icon" aria-hidden="true"><use href="#i-anchor"/></svg></span>
+            <div><strong>Responsibility</strong><small>Ownership that runs from the first call to the final placement.</small></div>
+          </div>
+          <div class="value reveal">
+            <span class="v-ic"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></span>
+            <div><strong>Client Satisfaction</strong><small>Partnerships measured in trust, retention and results.</small></div>
+          </div>
+          <div class="value reveal">
+            <span class="v-ic"><svg class="icon" aria-hidden="true"><use href="#i-trend"/></svg></span>
+            <div><strong>Growth</strong><small>Skills that compound — for people, clients and communities.</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="founder reveal">
+      <div class="founder-photo">
+        <img src="https://picsum.photos/seed/midas-founder/400/440.jpg" alt="Portrait of Mr. Mahesh Hadpe, Founder and Managing Director of MIDAS Skills" width="400" height="440">
+      </div>
+      <div class="founder-body">
+        <span class="quote-mark" aria-hidden="true">&ldquo;</span>
+        <blockquote>Every young person we skill is not a number on a roster — it is a family's future secured. That belief runs through everything we build at MIDAS.</blockquote>
+        <div class="founder-meta">
+          <strong>Mr. Mahesh Hadpe</strong>
+          <span>Founder &amp; Managing Director — a first-generation entrepreneur who has led MIDAS from a single office in Akurdi to a trusted partner for 50+ organisations across India.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CSR & COMPLIANCE ============ -->
+<section id="csr">
+  <div class="container">
+    <div class="csr-grid">
+      <div class="csr-copy">
+        <span class="sec-label reveal">CSR &amp; Compliance</span>
+        <h2 class="sec-title reveal" style="--d:.08s">Skills that change more than résumés</h2>
+        <p class="reveal" style="--d:.14s">Our placement-linked skill development programs are built for impact that outlasts a pay cheque — reaching first-generation learners, school drop-outs and women restarting careers, and converting CSR spending into measurable livelihoods.</p>
+        <div class="reveal" style="--d:.2s">
+          <div class="init">
+            <span class="init-ic"><svg class="icon" aria-hidden="true"><use href="#i-brief"/></svg></span>
+            <div>
+              <h4>Placement-Linked Skill Development</h4>
+              <p>Short-term, job-aligned courses where completion leads directly to verified employment within our employer network.</p>
+            </div>
+          </div>
+          <div class="init">
+            <span class="init-ic"><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg></span>
+            <div>
+              <h4>Youth Empowerment</h4>
+              <p>Career guidance, soft-skills bootcamps and apprenticeship access for underserved youth across Maharashtra.</p>
+            </div>
+          </div>
+          <div class="init">
+            <span class="init-ic"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></span>
+            <div>
+              <h4>Women Empowerment</h4>
+              <p>Returnship programs and flexible skilling tracks that bring women back into the workforce with confidence.</p>
+            </div>
+          </div>
+        </div>
+        <a href="#contact" class="btn btn-navy reveal" style="--d:.26s" data-enquire="CSR Partnership">Partner With Our Mission <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </div>
+
+      <aside class="cred-panel reveal" style="--d:.12s" aria-label="Registrations and certifications">
+        <h3>Registrations &amp; Certifications</h3>
+        <p>Audited, accredited and accountable — every program we run meets the highest statutory standards.</p>
+        <div class="cred">
+          <span class="cred-ic"><svg class="icon" aria-hidden="true"><use href="#i-award"/></svg></span>
+          <div><strong>ISO 9001:2015</strong><small>Quality Management System</small></div>
+          <svg class="icon cred-check" aria-hidden="true"><use href="#i-check-c"/></svg>
+        </div>
+        <div class="cred">
+          <span class="cred-ic"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg></span>
+          <div><strong>ISO 27001:2022</strong><small>Information Security Management</small></div>
+          <svg class="icon cred-check" aria-hidden="true"><use href="#i-check-c"/></svg>
+        </div>
+        <div class="cred">
+          <span class="cred-ic"><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg></span>
+          <div><strong>Section 80G</strong><small>Income Tax Exemption for Donations</small></div>
+          <svg class="icon cred-check" aria-hidden="true"><use href="#i-check-c"/></svg>
+        </div>
+        <div class="cred">
+          <span class="cred-ic"><svg class="icon" aria-hidden="true"><use href="#i-check-c"/></svg></span>
+          <div><strong>CSR-1 Registration</strong><small>MCA Registered CSR Implementing Agency</small></div>
+          <svg class="icon cred-check" aria-hidden="true"><use href="#i-check-c"/></svg>
+        </div>
+        <div class="cred">
+          <span class="cred-ic"><svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg></span>
+          <div><strong>NGO Darpan</strong><small>NITI Aayog Unique ID Holder</small></div>
+          <svg class="icon cred-check" aria-hidden="true"><use href="#i-check-c"/></svg>
+        </div>
+        <p class="cred-foot">Registered NAPS / NATS facilitator — Ministry of Skill Development &amp; Entrepreneurship, Government of India.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CAREERS ============ -->
+<section class="bg-white" id="careers">
+  <div class="container">
+    <div class="split-head">
+      <div class="reveal">
+        <span class="sec-label">Careers</span>
+        <h2 class="sec-title">Do the best work of your life, with purpose</h2>
+      </div>
+      <p class="sec-sub reveal" style="--d:.1s">We're a young, fast-moving team that rewards ownership and hates red tape. If you want your work to show up in real people's lives, apply below.</p>
+    </div>
+
+    <div class="jobs" data-stagger>
+      <div class="job reveal">
+        <div>
+          <h3>Business Development Manager</h3>
+          <p class="job-desc">Own new client acquisition for our apprenticeship, staffing and skilling portfolio — from the first conversation to a signed mandate.</p>
+          <div class="job-meta">
+            <span class="chip"><svg class="icon" aria-hidden="true"><use href="#i-brief"/></svg> Sales &amp; Partnerships</span>
+            <span class="chip"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg> Pune · On-site</span>
+            <span class="chip"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg> Full-time</span>
+          </div>
+        </div>
+        <button class="btn btn-outline btn-sm apply-btn" data-job="Business Development Manager" type="button">Apply Now <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+      </div>
+      <div class="job reveal">
+        <div>
+          <h3>Training Coordinator</h3>
+          <p class="job-desc">Plan and deliver training calendars, coordinate batches, trainers and assessments, and keep program quality consistently high.</p>
+          <div class="job-meta">
+            <span class="chip"><svg class="icon" aria-hidden="true"><use href="#i-cap"/></svg> Program Delivery</span>
+            <span class="chip"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg> Pune · On-site</span>
+            <span class="chip"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg> Full-time</span>
+          </div>
+        </div>
+        <button class="btn btn-outline btn-sm apply-btn" data-job="Training Coordinator" type="button">Apply Now <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+      </div>
+      <div class="job reveal">
+        <div>
+          <h3>Apprenticeship Program Associate</h3>
+          <p class="job-desc">Manage end-to-end apprentice lifecycles on NAPS / NATS — sourcing, documentation, compliance and candidate engagement.</p>
+          <div class="job-meta">
+            <span class="chip"><svg class="icon" aria-hidden="true"><use href="#i-layers"/></svg> NAPS / NATS Operations</span>
+            <span class="chip"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg> Pune · On-site</span>
+            <span class="chip"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg> Full-time</span>
+          </div>
+        </div>
+        <button class="btn btn-outline btn-sm apply-btn" data-job="Apprenticeship Program Associate" type="button">Apply Now <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+      </div>
+      <div class="job reveal">
+        <div>
+          <h3>Digital Marketing Executive</h3>
+          <p class="job-desc">Run our digital presence — campaigns, content and lead generation — and turn brand stories into enrolled learners.</p>
+          <div class="job-meta">
+            <span class="chip"><svg class="icon" aria-hidden="true"><use href="#i-trend"/></svg> Marketing &amp; Brand</span>
+            <span class="chip"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg> Pune · Hybrid</span>
+            <span class="chip"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg> Full-time</span>
+          </div>
+        </div>
+        <button class="btn btn-outline btn-sm apply-btn" data-job="Digital Marketing Executive" type="button">Apply Now <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+      </div>
+    </div>
+
+    <p class="jobs-note reveal">Can't find your role? We're always looking for curious, driven people — send your CV to <a href="mailto:careers@midasskills.org">careers@midasskills.org</a></p>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section id="gallery">
+  <div class="container">
+    <div class="sec-head center reveal">
+      <span class="sec-label">Gallery</span>
+      <h2 class="sec-title">Moments from the MIDAS journey</h2>
+      <p class="sec-sub">Training floors, industry events and everyday wins — a glimpse inside MIDAS.</p>
+    </div>
+
+    <div class="filters reveal" role="group" aria-label="Filter gallery">
+      <button class="filter-btn active" data-filter="all" type="button">All</button>
+      <button class="filter-btn" data-filter="training" type="button">Training Sessions</button>
+      <button class="filter-btn" data-filter="events" type="button">Events</button>
+      <button class="filter-btn" data-filter="office" type="button">Office Life</button>
+    </div>
+
+    <div class="g-grid" data-stagger>
+      <figure class="g-item reveal" data-cat="training">
+        <img src="https://picsum.photos/seed/ms-t1/640/480.jpg" alt="Apprenticeship induction batch at MIDAS Skills" loading="lazy" width="640" height="480">
+        <figcaption class="g-cap"><span class="g-cat">Training</span><h4>Apprenticeship Induction Batch</h4></figcaption>
+      </figure>
+      <figure class="g-item reveal" data-cat="events">
+        <img src="https://picsum.photos/seed/ms-e1/640/480.jpg" alt="Industry conclave hosted by MIDAS Skills" loading="lazy" width="640" height="480">
+        <figcaption class="g-cap"><span class="g-cat">Events</span><h4>Industry Conclave 2024</h4></figcaption>
+      </figure>
+      <figure class="g-item reveal" data-cat="office">
+        <img src="https://picsum.photos/seed/ms-o1/640/480.jpg" alt="MIDAS Skills corporate office at Akurdi, Pune" loading="lazy" width="640" height="480">
+        <figcaption class="g-cap"><span class="g-cat">Office</span><h4>Akurdi Corporate Office</h4></figcaption>
+      </figure>
+      <figure class="g-item reveal" data-cat="training">
+        <img src="https://picsum.photos/seed/ms-t2/640/480.jpg" alt="On-the-job skill training session" loading="lazy" width="640" height="480">
+        <figcaption class="g-cap"><span class="g-cat">Training</span><h4>On-the-Job Skill Session</h4></figcaption>
+      </figure>
+      <figure class="g-item reveal" data-cat="events">
+        <img src="https://picsum.photos/seed/ms-e2/640/480.jpg" alt="Placement drive conducted with hiring partners" loading="lazy" width="640" height="480">
+        <figcaption class="g-cap"><span class="g-cat">Events</span><h4>Placement Drive — Pune</h4></figcaption>
+      </figure>
+      <figure class="g-item reveal" data-cat="office">
+        <img src="https://picsum.photos/seed/ms-o2/640/480.jpg" alt="Team planning sprint at MIDAS Skills" loading="lazy" width="640" height="480">
+        <figcaption class="g-cap"><span class="g-cat">Office</span><h4>Team Planning Sprint</h4></figcaption>
+      </figure>
+      <figure class="g-item reveal" data-cat="training">
+        <img src="https://picsum.photos/seed/ms-t3/640/480.jpg" alt="Assessment and certification day for trainees" loading="lazy" width="640" height="480">
+        <figcaption class="g-cap"><span class="g-cat">Training</span><h4>Assessment &amp; Certification Day</h4></figcaption>
+      </figure>
+      <figure class="g-item reveal" data-cat="events">
+        <img src="https://picsum.photos/seed/ms-e3/640/480.jpg" alt="HR roundtable discussion with industry leaders" loading="lazy" width="640" height="480">
+        <figcaption class="g-cap"><span class="g-cat">Events</span><h4>HR Roundtable</h4></figcaption>
+      </figure>
+      <figure class="g-item reveal" data-cat="office">
+        <img src="https://picsum.photos/seed/ms-o3/640/480.jpg" alt="Client engagement meeting at MIDAS Skills" loading="lazy" width="640" height="480">
+        <figcaption class="g-cap"><span class="g-cat">Office</span><h4>Client Engagement Meet</h4></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="bg-white" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div>
+        <span class="sec-label reveal">Contact</span>
+        <h2 class="sec-title reveal" style="--d:.08s">Let's talk about your workforce goals</h2>
+        <p class="sec-sub reveal" style="--d:.14s">Whether you need a skilled talent pipeline, a CSR partner or your next career move — we usually reply within one business day.</p>
+
+        <div class="c-list reveal" style="--d:.2s">
+          <div class="c-item">
+            <span class="c-ic"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg></span>
+            <div>
+              <strong>Corporate Office</strong>
+              <p>428A, 427D &amp; 427E, Jai Ganesh Vision Mall,<br>Akurdi Chowk, Pune, Maharashtra 411035</p>
+            </div>
+          </div>
+          <div class="c-item">
+            <span class="c-ic"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg></span>
+            <div>
+              <strong>Phone</strong>
+              <a href="tel:+919223005179">+91 9223 00 5179</a>
+            </div>
+          </div>
+          <div class="c-item">
+            <span class="c-ic"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></span>
+            <div>
+              <strong>Email</strong>
+              <a href="mailto:info@midasskills.org">info@midasskills.org</a>
+            </div>
+          </div>
+          <div class="c-item">
+            <span class="c-ic"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg></span>
+            <div>
+              <strong>Working Hours</strong>
+              <p>Monday – Saturday, 9:30 AM – 6:30 PM</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="map-card reveal" style="--d:.26s">
+          <iframe title="MIDAS Skills location — Jai Ganesh Vision Mall, Akurdi, Pune" src="https://www.google.com/maps?q=Jai+Ganesh+Vision+Mall,+Akurdi+Chowk,+Pune,+Maharashtra+411035&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+
+      <div class="form-card reveal" style="--d:.12s">
+        <div class="form-head">
+          <h3>Send us a message</h3>
+          <p>Fill in the details below and our team will get back to you within one business day.</p>
+        </div>
+        <form id="contact-form" novalidate>
+          <div class="f-row">
+            <div class="field">
+              <label for="f-name">Full Name *</label>
+              <input id="f-name" type="text" placeholder="e.g. Rahul Sharma" autocomplete="name">
+              <span class="err"></span>
+            </div>
+            <div class="field">
+              <label for="f-email">Email Address *</label>
+              <input id="f-email" type="email" placeholder="you@company.com" autocomplete="email">
+              <span class="err"></span>
+            </div>
+          </div>
+          <div class="f-row">
+            <div class="field">
+              <label for="f-phone">Phone</label>
+              <input id="f-phone" type="tel" placeholder="+91 98765 43210" autocomplete="tel">
+              <span class="err"></span>
+            </div>
+            <div class="field">
+              <label for="f-interest">I'm interested in</label>
+              <div class="sel-wrap">
+                <select id="f-interest">
+                  <option value="General Enquiry">General Enquiry</option>
+                  <option value="Apprenticeship (NAPS/NATS)">Apprenticeship Advisory (NAPS/NATS)</option>
+                  <option value="WILP">Work Integrated Learning (WILP)</option>
+                  <option value="Workforce & Contract Staffing">Workforce &amp; Contract Staffing</option>
+                  <option value="Corporate Upskilling">Corporate Upskilling</option>
+                  <option value="CSR Partnership">CSR Partnership</option>
+                  <option value="Careers">Careers / Job Application</option>
+                </select>
+                <svg class="icon sel-ic" aria-hidden="true"><use href="#i-arrd"/></svg>
+              </div>
+              <span class="err"></span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-message">Message *</label>
+            <textarea id="f-message" rows="4" placeholder="Tell us about your requirement — industry, headcount, timeline..."></textarea>
+            <span class="err"></span>
+          </div>
+          <button class="btn btn-accent btn-block" id="submit-btn" type="submit">
+            <span class="spin" aria-hidden="true"></span>
+            <span class="bt-label">Send Message</span>
+            <svg class="icon" aria-hidden="true"><use href="#i-send"/></svg>
+          </button>
+          <p class="form-note">By submitting, you agree to be contacted by our team. We never share your data.</p>
+        </form>
+
+        <div class="form-success" role="status">
+          <span class="fs-ic"><svg class="icon" aria-hidden="true"><use href="#i-check-c"/></svg></span>
+          <h3>Message sent successfully!</h3>
+          <p>Thank you, <strong id="succ-name">friend</strong>. Our team will reach out to you within one business day.</p>
+          <button class="btn btn-outline btn-sm" id="reset-form" type="button">Send Another Message</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="f-grid">
+      <div class="f-brand">
+        <a class="brand" href="#home" aria-label="MIDAS Skills — Home">
+          <svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="9" fill="#E8702A"/><path d="M10 28V13l10 9 10-9v15" stroke="#fff" stroke-width="3.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="20" cy="31" r="2" fill="#F5A623"/></svg>
+          <span class="brand-name"><b>MIDAS <em>SKILLS</em></b><small>Workforce &amp; Apprenticeship Solutions</small></span>
+        </a>
+        <p>A Pune-based workforce solutions company — enabling young Indians to learn, earn and grow while keeping India's industries staffed with certified, job-ready talent.</p>
+        <div class="f-social">
+          <button class="social-btn" type="button" aria-label="LinkedIn"><svg class="icon icon-fill" aria-hidden="true"><use href="#i-linkedin"/></svg></button>
+          <button class="social-btn" type="button" aria-label="X (Twitter)"><svg class="icon icon-fill" aria-hidden="true"><use href="#i-x"/></svg></button>
+          <button class="social-btn" type="button" aria-label="Facebook"><svg class="icon icon-fill" aria-hidden="true"><use href="#i-fb"/></svg></button>
+          <button class="social-btn" type="button" aria-label="Instagram"><svg class="icon" aria-hidden="true"><use href="#i-insta"/></svg></button>
+        </div>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul class="f-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#csr">CSR</a></li>
+          <li><a href="#careers">Careers</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Our Services</h4>
+        <ul class="f-links">
+          <li><a href="#services">Apprenticeship Advisory</a></li>
+          <li><a href="#services">WILP Programs</a></li>
+          <li><a href="#services">Contract Staffing</a></li>
+          <li><a href="#services">Corporate Upskilling</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get in Touch</h4>
+        <ul class="f-contact">
+          <li><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><span>428A, 427D &amp; 427E, Jai Ganesh Vision Mall, Akurdi Chowk, Pune, Maharashtra 411035</span></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><a href="tel:+919223005179">+91 9223 00 5179</a></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:info@midasskills.org">info@midasskills.org</a></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg><span>Mon – Sat, 9:30 AM – 6:30 PM</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <p>© <span id="year">2025</span> MIDAS Skills. All Rights Reserved. | Pune, Maharashtra, India</p>
+      <div class="f-legal">
+        <a href="#" data-modal="privacy">Privacy Policy</a>
+        <span aria-hidden="true">·</span>
+        <a href="#" data-modal="terms">Terms of Use</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ TOAST / MODAL / TO-TOP ============ -->
+<div class="toast" id="toast" role="status" aria-live="polite">
+  <span class="t-ic" id="toast-ic"></span>
+  <span id="toast-msg"></span>
+</div>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="m-title">
+  <div class="modal-overlay" data-close></div>
+  <div class="modal-card">
+    <button class="modal-x" data-close aria-label="Close dialog"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+    <div id="m-privacy">
+      <h3 id="m-title">Privacy Policy</h3>
+      <p>MIDAS Skills respects your privacy. Any personal details you share through this website — such as your name, email address, phone number and message — are used solely to respond to your enquiry and are never sold or shared with third parties for marketing purposes.</p>
+      <p>Program, recruitment and placement data is handled in line with applicable Indian data-protection regulations and retained only as long as necessary to deliver our services or meet statutory obligations.</p>
+      <p>Questions about your data? Write to us at info@midasskills.org and we will respond promptly.</p>
+    </div>
+    <div id="m-terms" hidden>
+      <h3>Terms of Use</h3>
+      <p>Content on this website is provided for general information about MIDAS Skills and its services. While we keep it accurate and current, details such as program structures, openings and schedules may change without prior notice.</p>
+      <p>All trademarks, certifications and referenced logos belong to their respective owners. Nothing on this site constitutes a contractual offer.</p>
+      <p>Use of this website is governed by the laws of India, with exclusive jurisdiction in Pune, Maharashtra.</p>
+    </div>
+  </div>
+</div>
+
+<button class="to-top" id="to-top" type="button" aria-label="Back to top"><svg class="icon" aria-hidden="true"><use href="#i-up"/></svg></button>
+
+<script>
+(() => {
+'use strict';
+const $  = (s, c = document) => c.querySelector(s);
+const $$ = (s, c = document) => [...c.querySelectorAll(s)];
+
+/* ---------- Footer year ---------- */
+ $('#year').textContent = new Date().getFullYear();
+
+/* ---------- Header state, progress bar, scrollspy, to-top ---------- */
+const header   = $('#site-header');
+const toTop    = $('#to-top');
+const progress = $('#progress');
+const navLinks = $$('.nav-link');
+const spied    = ['home','about','services','csr','careers','gallery','contact']
+                   .map(id => document.getElementById(id)).filter(Boolean);
+
+function onScroll(){
+  const doc = document.documentElement;
+  const max = doc.scrollHeight - innerHeight;
+  progress.style.transform = `scaleX(${max > 0 ? scrollY / max : 0})`;
+  header.classList.toggle('scrolled', scrollY > 8);
+  toTop.classList.toggle('show', scrollY > 600);
+
+  let cur = 'home';
+  for(const s of spied.slice().sort((a,b) => a.offsetTop - b.offsetTop)){
+    if(scrollY >= s.offsetTop - 170) cur = s.id;
+  }
+  navLinks.forEach(a => a.classList.toggle('active', a.hash === '#' + cur));
+}
+document.addEventListener('scroll', onScroll, { passive: true });
+onScroll();
+
+toTop.addEventListener('click', () => scrollTo({ top: 0, behavior: 'smooth' }));
+
+/* ---------- Mobile menu ---------- */
+const burger = $('#burger');
+const panel  = $('#m-panel');
+function closeMenu(){
+  panel.classList.remove('open');
+  burger.classList.remove('active');
+  burger.setAttribute('aria-expanded', 'false');
+}
+burger.addEventListener('click', () => {
+  const open = panel.classList.toggle('open');
+  burger.classList.toggle('active', open);
+  burger.setAttribute('aria-expanded', String(open));
+});
+ $$('#m-panel a').forEach(a => a.addEventListener('click', closeMenu));
+
+/* ---------- Reveal on scroll — nothing is hidden unless JS itself runs ---------- */
+const reveals = $$('.reveal');
+let revealedAny = false;
+if ('IntersectionObserver' in window) {
+  try {
+    reveals.forEach(el => el.classList.add('pre'));
+    const rio = new IntersectionObserver(entries => {
+      entries.forEach(en => {
+        if (en.isIntersecting) {
+          revealedAny = true;
+          en.target.classList.add('in');
+          rio.unobserve(en.target);
+        }
+      });
+    }, { threshold: .12, rootMargin: '0px 0px -36px 0px' });
+    reveals.forEach(el => rio.observe(el));
+    /* Safety net: if the observer never fires (rare webview bug),
+       un-hide everything as soon as the user scrolls */
+    setTimeout(() => {
+      if (revealedAny) return;
+      const iv = setInterval(() => {
+        if (revealedAny) { clearInterval(iv); return; }
+        if (scrollY > 400) { clearInterval(iv); reveals.forEach(el => el.classList.remove('pre')); }
+      }, 400);
+    }, 5000);
+    /* Absolute fallback: never leave content hidden, even without scrolling */
+    setTimeout(() => { if (!revealedAny) reveals.forEach(el => el.classList.remove('pre')); }, 12000);
+  } catch (err) {
+    reveals.forEach(el => el.classList.remove('pre'));
+  }
+}
+
+/* ---------- Stagger delays ---------- */
+ $$('[data-stagger]').forEach(g =>
+  [...g.children].forEach((c, i) => c.style.setProperty('--d', (i * 90) + 'ms'))
+);
+
+/* ---------- Animated impact counters ---------- */
+const cio = 'IntersectionObserver' in window ? new IntersectionObserver(entries => {
+  entries.forEach(en => {
+    if(!en.isIntersecting) return;
+    cio.unobserve(en.target);
+    animateCount(en.target);
+  });
+}, { threshold: .5 }) : null;
+function animateCount(el){
+  const target = +el.dataset.count, dur = 1900, t0 = performance.now();
+  (function tick(t){
+    const p = Math.min((t - t0) / dur, 1);
+    const e = 1 - Math.pow(1 - p, 3); /* ease-out cubic */
+    el.textContent = Math.round(target * e).toLocaleString('en-IN');
+    if(p < 1) requestAnimationFrame(tick);
+  })(t0);
+}
+ $$('.stat-num').forEach(n => cio ? cio.observe(n) : animateCount(n));
+
+/* ---------- Toast ---------- */
+const toastEl = $('#toast');
+let toastT;
+function toast(msg, icon = 'i-check-c'){
+  $('#toast-ic').innerHTML = `<svg class="icon" aria-hidden="true"><use href="#${icon}"/></svg>`;
+  $('#toast-msg').textContent = msg;
+  toastEl.classList.add('show');
+  clearTimeout(toastT);
+  toastT = setTimeout(() => toastEl.classList.remove('show'), 3400);
+}
+
+/* ---------- Gallery filtering ---------- */
+const fBtns = $$('.filter-btn');
+const gItems = $$('.g-item');
+fBtns.forEach(btn => btn.addEventListener('click', () => {
+  fBtns.forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const f = btn.dataset.filter;
+  gItems.forEach(it => {
+    const show = f === 'all' || it.dataset.cat === f;
+    if(show){
+      it.style.display = '';
+      requestAnimationFrame(() => requestAnimationFrame(() => it.classList.remove('gone')));
+    } else {
+      it.classList.add('gone');
+      setTimeout(() => { if(it.classList.contains('gone')) it.style.display = 'none'; }, 280);
+    }
+  });
+}));
+
+/* ---------- Service & CSR enquiry shortcuts (prefill form) ---------- */
+ $$('[data-enquire]').forEach(el => el.addEventListener('click', () => {
+  const v = el.dataset.enquire;
+  const sel = $('#f-interest');
+  if(sel) sel.value = v;
+  toast(`Enquiry drafted: ${v} — tell us a bit more below`, 'i-send');
+}));
+
+/* ---------- Careers "Apply Now" (prefill + scroll) ---------- */
+ $$('.apply-btn').forEach(b => b.addEventListener('click', () => {
+  const job = b.dataset.job;
+  $('#f-interest').value = 'Careers';
+  const msg = $('#f-message');
+  msg.value = `I would like to apply for the position of ${job}.`;
+  msg.closest('.field').classList.remove('invalid');
+  document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+  toast(`Application started — ${job}`, 'i-brief');
+  setTimeout(() => msg.focus({ preventScroll: true }), 800);
+}));
+
+/* ---------- Contact form validation + submission ---------- */
+const form = $('#contact-form');
+const fields = {
+  'f-name':    [v => v.trim().length >= 3, 'Please enter your full name'],
+  'f-email':   [v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()), 'Please enter a valid email address'],
+  'f-phone':   [v => {
+      if(!v.trim()) return true; /* optional field */
+      const d = v.replace(/\D/g, '');
+      const n = (d.length === 12 && d.startsWith('91')) ? d.slice(2) : d;
+      return n.length === 10 && /^[6-9]/.test(n);
+    }, 'Enter a valid 10-digit Indian mobile number'],
+  'f-message': [v => v.trim().length >= 10, 'Please tell us a bit more (min. 10 characters)']
+};
+function validate(id){
+  const el = document.getElementById(id);
+  const [fn, msg] = fields[id];
+  const ok = fn(el.value);
+  el.closest('.field').classList.toggle('invalid', !ok);
+  el.closest('.field').querySelector('.err').textContent = ok ? '' : msg;
+  return ok;
+}
+Object.keys(fields).forEach(id => {
+  const el = document.getElementById(id);
+  el.addEventListener('blur', () => { if(el.value.trim() || id === 'f-message') validate(id); });
+  el.addEventListener('input', () => {
+    if(el.closest('.field').classList.contains('invalid')) validate(id);
+  });
+});
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  const results = Object.keys(fields).map(validate);
+  if(results.includes(false)){
+    toast('Please fix the highlighted fields', 'i-close');
+    const bad = $('.field.invalid input, .field.invalid textarea', form);
+    if(bad) bad.focus();
+    return;
+  }
+  const btn = $('#submit-btn'), label = btn.querySelector('.bt-label');
+  btn.disabled = true; btn.classList.add('loading'); label.textContent = 'Sending…';
+  setTimeout(() => { /* simulated request — everything stays local */
+    btn.disabled = false; btn.classList.remove('loading'); label.textContent = 'Send Message';
+    $('#succ-name').textContent = $('#f-name').value.trim().split(/\s+/)[0];
+    $('.form-card').classList.add('sent');
+    form.reset();
+    toast('Message sent — we\u2019ll get back to you within 1 business day');
+  }, 1400);
+});
+ $('#reset-form').addEventListener('click', () => {
+  $('.form-card').classList.remove('sent');
+  $('#f-name').focus();
+});
+
+/* ---------- Legal modal (Privacy / Terms) ---------- */
+const modal = $('#modal');
+function openModal(kind){
+  $('#m-privacy').hidden = kind !== 'privacy';
+  $('#m-terms').hidden   = kind !== 'terms';
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(){
+  modal.classList.remove('open');
+  document.body.style.overflow = '';
+}
+ $$('[data-modal]').forEach(b => b.addEventListener('click', e => {
+  e.preventDefault();
+  openModal(b.dataset.modal);
+}));
+ $$('[data-close]').forEach(b => b.addEventListener('click', closeModal));
+document.addEventListener('keydown', e => {
+  if(e.key === 'Escape'){ closeModal(); closeMenu(); }
+});
+
+/* ---------- Footer social buttons ---------- */
+ $$('.social-btn').forEach(b => b.addEventListener('click', () =>
+  toast('Our social profiles are launching soon — write to info@midasskills.org', 'i-mail')
+));
+})();
+</script>
+</body>
+</html>
